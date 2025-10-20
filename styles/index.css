@@ -1,0 +1,274 @@
+body {
+ margin: 0;
+ padding: 0;
+ }
+ 
+header {
+  padding: 17px;
+  background-color: #f7e4e4;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+}
+
+header h1 {
+  color: #9E266E;
+  font-family: 'Inknut Antiqua', 'serif';
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 0;
+  grid-column: 1;
+  justify-self: start;
+}
+h1 a {
+  color: #9E266E;
+  text-decoration: none;
+}
+
+.menu {
+  list-style: none;
+  margin: 0; 
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  grid-column: 2;
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+.menu a {
+ color: rgb(100, 51, 81);
+ text-decoration: none;
+ display: inline;
+ padding: 15px 10px;
+ font-weight: 500;
+ }
+ .menu a:hover {
+ text-decoration: underline;
+  color: #9E266E;
+ }
+ 
+.carruse img {
+ width: 100%;
+ }
+
+.about h2 {
+ text-align: center;
+ color: rgb(100, 51, 81);
+ font-size: 2.5rem;
+ padding: 0px;
+ margin: 10px;
+ }
+.about p {
+ background: #fff; 
+ font-size: 1.3rem; 
+ max-width: 900px; 
+ margin: 10px auto; 
+ padding: 30px 50px; 
+ border-radius: 10px; 
+ box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+ text-align: center; 
+ }
+ 
+.botones{
+ width: 80%;
+ margin: 40px auto;
+ display: flex;
+ justify-content: center;
+ gap: 40px;
+ flex-wrap: wrap;
+ }
+ 
+.btn-img{
+ display: block;
+ flex: 1 1 0;
+ max-width: 400px;
+ transform: translateY(0);
+ transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+ }
+ 
+.btn-img img{
+ width: 100%;
+ height: auto;
+ display: block;
+ border-radius: 12px;
+ box-shadow: 0 6px 14px rgba(0,0,0,.12);
+ }
+ 
+.btn-img:hover{
+ transform: translateY(-4px) scale(1.02);
+ box-shadow: 0 12px 24px rgba(0,0,0,.16);
+ filter: saturate(1.05);
+ }
+ 
+@media (prefers-reduced-motion: reduce){
+ .btn-img{ transition: none; }
+ .btn-img:hover{ transform: none; }
+ }
+ 
+ @media (max-width: 900px){
+ .btn-img{ max-width: 320px; }
+ .botones{ gap: 24px; } 
+ }
+ 
+footer {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 40px;
+ background: #242222;
+ color: white;
+ font-weight: 200;
+ }
+#contacto {
+ font-weight: bold;
+ font-size: 25px;
+ color: white;
+ font-weight: 200;
+ }
+footer ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ color: white;
+ font-weight: 100;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ }
+ 
+footer a {
+ color: white;
+ text-decoration: none;
+ font-size: 20px;
+ }
+ 
+footer a:hover {
+ text-decoration: underline;
+  color: #9E266E;
+ }
+ 
+.ig {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-size: 25px;
+ color: white;
+ }
+ 
+.ig img {
+ width: 22px;
+ height: 22px;
+ }
+
+
+/* Tablet (≤ 900px): dos columnas para .botones, tipografías más contenidas */
+@media (max-width: 900px) {
+  header {
+    padding: 8px 12px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+  .menu a {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+  }
+
+  .about h2 {
+    font-size: clamp(1.6rem, 4.5vw, 2rem);
+  }
+  .about p {
+    max-width: 90%;
+    font-size: 1.05rem;
+    padding: 20px;
+  }
+
+  .botones{
+    width: 90%;
+    gap: 24px;
+  }
+
+  .btn-img{
+    flex: 0 1 calc((100% - 24px)/2);
+    max-width: none;
+  }
+
+  footer {
+    padding: 24px;
+  }
+  footer ul {
+    gap: 12px;
+  }
+  footer a {
+    font-size: 18px;
+  }
+  .ig {
+    gap: 6px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile (≤ 600px): una columna, todo centrado y más aire para leer cómodo */
+@media (max-width: 600px) {
+  h1 {
+    font-size: clamp(1.2rem, 6vw, 1.6rem);
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 8px;
+  }
+  .menu a {
+    padding: 8px 6px; 
+    font-size: 0.95rem;
+  }
+
+  .carruse img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about h2 {
+    margin: 8px 0;
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+  .about p {
+    max-width: 92%;
+    margin: 12px auto;
+    padding: 16px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 20px;
+  }
+  #contacto {
+    font-size: 20px;
+  }
+  footer ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+  footer a {
+    font-size: 16px;
+  }
+  .ig {
+    font-size: 18px;
+  }
+  .ig img {
+    width: 22px;
+    height: 22px;
+  }
+}
+

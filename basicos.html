@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/extra.css">
+    <title>Document</title>
+</head>
+<!-- Vinculá tus archivos -->
+<script src="app.js" defer></script>
+<body>
+    <header>
+        <h1><a href="index.html">ZEPHIR</a></h1>
+        <nav>
+        <ul class="menu">
+            <li><a href="camisas.html">CAMISAS</a></li>
+            <li><a href="basicos.html">BASICOS</a></li>
+            <li><a href="denim.html">DENIM</a></li>
+            <li><a href="promociones.html">PROMOS</a></li>
+        </ul>
+    </nav>
+    </header>
+<main class="container">
+  <h2 class="section-title">BASICOS</h2>
+
+  <!-- GRID -->
+  <section class="product-grid" id="grid">
+    <!-- Duplicá cards; cambiá data-*, miniatura y precio -->
+    <article class="card"
+      data-name="Musculosa Lisboa"
+      data-price="25990"
+      data-desc="Musculosa de punto en color amarillo pastel con tirantes finos. Ideal para combinar con shorts, 
+      faldas o pantalones. Es una prenda ligera y esencial para la temporada."
+      data-images='["fotos/muscu-amarilla1.png","fotos/muscu-amarilla2.png","fotos/muscu-amarilla3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/muscu-amarilla1.png" alt="Musculosa Lisboa" loading="lazy" width="768" height="1126">
+        </div>
+        <h3 class="name">Musculosa Lisboa</h3>
+        <p class="price">$ 25.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Musculosa Mónaco"
+      data-price="23990"
+      data-desc="Musculosa azul marino de cuello alto y corte recto. Confeccionada en un tejido ajustado, es un
+       básico versátil que ofrece un estilo limpio y sofisticado."
+      data-images='["fotos/muscu1.png","fotos/muscu2.png","fotos/muscu3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/muscu1.png" alt="Musculosa Mónaco" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Musculosa Mónaco</h3>
+        <p class="price">$ 23.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Camiseta Oslo"
+      data-price="28990"
+      data-desc="Camiseta de manga larga en color blanco. Su diseño simple y ajustado la hace perfecta 
+      para crear looks minimalistas o para usar como capa base."
+      data-images='["fotos/remera1.png","fotos/remera2.png","fotos/remera3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/remera1.png" alt="Camiseta Oslo" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Camiseta Oslo</h3>
+        <p class="price">$ 28.990</p>
+      </button>
+    </article>
+
+      <article class="card"
+      data-name="Sueter Helsiniki"
+      data-price="48990"
+      data-desc="Sueter de punto en tono beige. Con un cuello redondo y un tejido suave, es una prenda 
+      cómoda y atemporal, ideal para cualquier ocasión."
+      data-images='["fotos/sueter1.png","fotos/sueter2.png","fotos/sueter3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/sueter1.png" alt="Sueter Helsiniki" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Sueter Helsiniki</h3>
+        <p class="price">$ 48.990</p>
+      </button>
+    </article>
+  </section>
+
+  <!-- MODAL REUTILIZABLE (arranca cerrado) -->
+  <section class="modal" id="modal" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
+
+      <header class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <div class="modal-price" id="modalPrice"></div>
+        </div>
+      </header>
+
+      <!-- Carrusel que se adapta a la imagen -->
+      <div class="carousel">
+        <button class="nav prev" id="prevBtn" aria-label="Anterior">◀</button>
+        <div class="slides" id="slides"></div>
+        <button class="nav next" id="nextBtn" aria-label="Siguiente">▶</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+      <p class="description" id="modalDesc"></p>
+    </div>
+
+    <!-- clic en fondo → cerrar -->
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  </section>
+</main>
+<footer>
+    <ul>
+        <li>Local 22 - Segundo Piso</li>
+        <li id="contacto"> Contacto!</li>
+        <li><a href="mailto:zzephir.clothing@gmail.com">zzephir.clothing@gmail.com</a></li>
+        <li><a href="https://wa.me/541144928428" target="_blank">+54 11 4492-828</a></li>
+    </ul>
+    <section class="ig">
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">
+            <img src="imagenes/logoig.png" alt="logo de instagram">
+        </a>
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">@zephir.clothing</a>
+    </section>
+</footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/extra.css">
+    <title>Document</title>
+</head>
+<!-- Vinculá tus archivos -->
+<script src="app.js" defer></script>
+<body>
+    <header>
+        <h1><a href="index.html">ZEPHIR</a></h1>
+        <nav>
+        <ul class="menu">
+            <li><a href="camisas.html">CAMISAS</a></li>
+            <li><a href="basicos.html">BASICOS</a></li>
+            <li><a href="denim.html">DENIM</a></li>
+            <li><a href="promociones.html">PROMOS</a></li>
+        </ul>
+    </nav>
+    </header>
+<main class="container">
+  <h2 class="section-title">CAMISAS</h2>
+
+  <!-- GRID -->
+  <section class="product-grid" id="grid">
+    <!-- Duplicá cards; cambiá data-*, miniatura y precio -->
+    <article class="card"
+      data-name="Jean Los Ángeles"
+      data-price="65990"
+      data-desc="Jean ancho de corte holgado en denim azul de lavado medio. Con un diseño de pierna ancha y tiro 
+      alto, esta prenda es ideal para un look relajado y moderno."
+      data-images='["fotos/jean-azul1.png","fotos/jean-azul2.png","fotos/jean-azul3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/jean-azul1.png" alt="Jean Los Ángeles" loading="lazy" width="768" height="1126">
+        </div>
+        <h3 class="name">Jean Los Ángeles</h3>
+        <p class="price">$ 65.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Jean Tokio"
+      data-price="60990"
+      data-desc="Jean ancho de corte extra holgado en color negro. Su silueta de pierna amplia y su diseño de 
+      tiro alto lo convierten en una pieza de declaración para un estilo contemporáneo."
+      data-images='["fotos/jean-negro1.png","fotos/jean-negro2.png","fotos/jean-negro3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/jean-negro1.png" alt="Jean Tokio" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Jean Tokio</h3>
+        <p class="price">$ 60.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Mono Paris"
+      data-price="88990"
+      data-desc="Mono de jean en un lavado azul claro, con cuello camisero, sin mangas y piernas de corte amplio. 
+      Un estilo versátil de una sola pieza que es cómodo y chic."
+      data-images='["fotos/mono1.png","fotos/mono2.png","fotos/mono3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/mono1.png" alt="Mono Paris" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Mono Paris</h3>
+        <p class="price">$ 88.990</p>
+      </button>
+    </article>
+
+      <article class="card"
+      data-name="Pollera Chicago"
+      data-price="58990"
+      data-desc="Minifalda de jean en un lavado celeste claro, con bajo desflecado. Es un básico clásico 
+      que se adapta a cualquier estilo."
+      data-images='["fotos/pollera1.png","fotos/pollera2.png","fotos/pollera3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/pollera1.png" alt="Pollera Chicago" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Pollera Chicago</h3>
+        <p class="price">$ 58.990</p>
+      </button>
+    </article>
+
+      <article class="card"
+      data-name="Pollera Berlin"
+      data-price="64990"
+      data-desc="Falda midi de jean en color negro. Su corte recto y su estilo atemporal la hacen perfecta 
+      para looks de día o de noche."
+      data-images='["fotos/pollera-negra1.png","fotos/pollera-negra2.png","fotos/pollera-negra3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/pollera-negra1.png" alt="Pollera Berlín" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Pollera Berlín</h3>
+        <p class="price">$ 64.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Campera de Jean Londres"
+      data-price="78990"
+      data-desc="Campera de jean en color negro con un corte relajado y estilo clásico. Esta prenda es un 
+      básico de armario que combina con todo."
+      data-images='["fotos/campera1.png","fotos/campera2.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/campera1.png" alt="Campera de Jean Londres" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Campera de Jean Londres</h3>
+        <p class="price">$ 78.990</p>
+      </button>
+    </article>
+  </section>
+
+  <!-- MODAL REUTILIZABLE (arranca cerrado) -->
+  <section class="modal" id="modal" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
+
+      <header class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <div class="modal-price" id="modalPrice"></div>
+        </div>
+      </header>
+
+      <!-- Carrusel que se adapta a la imagen -->
+      <div class="carousel">
+        <button class="nav prev" id="prevBtn" aria-label="Anterior">◀</button>
+        <div class="slides" id="slides"></div>
+        <button class="nav next" id="nextBtn" aria-label="Siguiente">▶</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+      <p class="description" id="modalDesc"></p>
+    </div>
+
+    <!-- clic en fondo → cerrar -->
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  </section>
+</main>
+<footer>
+    <ul>
+        <li>Local 22 - Segundo Piso</li>
+        <li id="contacto"> Contacto!</li>
+        <li><a href="mailto:zzephir.clothing@gmail.com">zzephir.clothing@gmail.com</a></li>
+        <li><a href="https://wa.me/541144928428" target="_blank">+54 11 4492-828</a></li>
+    </ul>
+    <section class="ig">
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">
+            <img src="imagenes/logoig.png" alt="logo de instagram">
+        </a>
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">@zephir.clothing</a>
+    </section>
+</footer>
+</body>
+</html>

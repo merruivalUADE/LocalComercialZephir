@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/extra.css">
+    <link rel="stylesheet" href="styles/promociones.css">
+    <title>Promociones - Zephir Clothing</title>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">ZEPHIR</a></h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="camisas.html">CAMISAS</a></li>
+                <li><a href="basicos.html">BASICOS</a></li>
+                <li><a href="denim.html">DENIM</a></li>
+                <li><a href="promociones.html">PROMOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">ELIGE TUS PRODUCTOS Y AHORRÁ</h2>
+
+        <section class="promo-card">
+            <h3>Promo 1: 50% OFF en el 2do producto</h3>
+            <p class="promo-desc">Seleccioná dos productos de la lista y te hacemos un 50% de descuento en el de menor valor.</p>
+            <div class="calculator">
+                <label for="promo1-prod1">Elegí el primer producto:</label>
+                <select id="promo1-prod1"></select>
+                <label for="promo1-prod2">Elegí el segundo producto:</label>
+                <select id="promo1-prod2"></select>
+                <button id="calc-promo1">Calcular Ahorro</button>
+            </div>
+            <div class="results" id="result-promo1">
+                </div>
+        </section>
+
+        <section class="promo-card">
+            <h3>Promo 2: 3x2 en cualquier producto</h3>
+            <p class="promo-desc">Agregá 3 productos a tu lista y el de menor valor ¡va de regalo! Podés agregar más si querés (ej: 6 productos, 2 gratis).</p>
+            <div class="calculator">
+                <label for="promo2-select">Seleccioná un producto para agregar:</label>
+                <select id="promo2-select"></select>
+                <div class="button-group">
+                    <button id="add-promo2">Agregar a la lista</button>
+                    <button id="clear-promo2" class="clear-btn">Limpiar Lista</button>
+                </div>
+                <div class="selected-items-list" id="promo2-selected-items">
+                    <h4>Productos en la lista:</h4>
+                    </div>
+                <button id="calc-promo2">Calcular Ahorro 3x2</button>
+            </div>
+            <div class="results" id="result-promo2">
+                </div>
+        </section>
+
+        <section class="promo-card">
+            <h3>Promo 3: 10% OFF en compras superiores a $100.000</h3>
+            <p class="promo-desc">Armá un carrito de compras. Si tu total supera los $100.000, te aplicamos un 10% de descuento final.</p>
+            <div class="calculator">
+                <label for="promo3-select">Seleccioná un producto para agregar:</label>
+                <select id="promo3-select"></select>
+                 <div class="button-group">
+                    <button id="add-promo3">Agregar a la lista</button>
+                    <button id="clear-promo3" class="clear-btn">Limpiar Lista</button>
+                </div>
+                <div class="selected-items-list" id="promo3-selected-items">
+                    <h4>Productos en la lista:</h4>
+                    </div>
+                <button id="calc-promo3">Calcular Ahorro 10% OFF</button>
+            </div>
+            <div class="results" id="result-promo3">
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <ul>
+            <li>Local 22 - Segundo Piso</li>
+            <li>Contacto!</li>
+            <li><a href="mailto:zzephir.clothing@gmail.com">zzephir.clothing@gmail.com</a></li>
+            <li><a href="https://wa.me/541144928428" target="_blank">+54 11 4492-828</a></li>
+        </ul>
+        <section class="ig">
+            <a href="https://www.instagram.com/zephir.clothing" target="_blank"><img src="imagenes/logoig.png" alt="logo de instagram"></a>
+            <a href="https://www.instagram.com/zephir.clothing" target="_blank">@zephir.clothing</a>
+        </section>
+    </footer>
+
+    <script src="promociones.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/extra.css">
+    <title>Document</title>
+</head>
+<!-- Vinculá tus archivos -->
+<script src="app.js" defer></script>
+<body>
+    <header>
+        <h1><a href="index.html">ZEPHIR</a></h1>
+        <nav>
+        <ul class="menu">
+            <li><a href="camisas.html">CAMISAS</a></li>
+            <li><a href="basicos.html">BASICOS</a></li>
+            <li><a href="denim.html">DENIM</a></li>
+            <li><a href="promociones.html">PROMOS</a></li>
+        </ul>
+    </nav>
+    </header>
+<main class="container">
+  <h2 class="section-title">CAMISAS</h2>
+
+  <!-- GRID -->
+  <section class="product-grid" id="grid">
+    <!-- Duplicá cards; cambiá data-*, miniatura y precio -->
+    <article class="card"
+      data-name="Camisa Estambul"
+      data-price="35990"
+      data-desc="Una blusa blanca con detalles calados y mangas cortas. Su diseño es fresco y ligero, perfecto para
+       un estilo veraniego y casual."
+      data-images='["fotos/camisa-blanca1.png","fotos/camisa-blanca2.png","fotos/camisa-blanca3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/camisa-blanca1.png" alt="Camisa Estambul" loading="lazy" width="768" height="1126">
+        </div>
+        <h3 class="name">Camisa Estambul</h3>
+        <p class="price">$ 35.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Camisa Santorini"
+      data-price="30990"
+      data-desc="Esta blusa color crema presenta un cuello alto y delicados bordados. Su estilo romántico y etéreo la
+       hace ideal para un look suave y elegante."
+      data-images='["fotos/camisa-crema1.png","fotos/camisa-crema2.png","fotos/camisa-crema3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/camisa-crema1.png" alt="Camisa Santorini" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Camisa Santorini</h3>
+        <p class="price">$ 30.990</p>
+      </button>
+    </article>
+
+    <article class="card"
+      data-name="Camisa Edimburgo"
+      data-price="28990"
+      data-desc="Una camisa de cuadros en tonos azul, blanco y marrón. Su corte holgado y diseño versátil la
+       convierten en una opción cómoda para el día a día."
+      data-images='["fotos/camisa-cuadrille1.png","fotos/camisa-cuadrille2.png","fotos/camisa-cuadrille3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/camisa-cuadrille1.png" alt="Camisa Edimburgo" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Camisa Edimburgo</h3>
+        <p class="price">$ 28.990</p>
+      </button>
+    </article>
+
+      <article class="card"
+      data-name="Camisa Granada"
+      data-price="38990"
+      data-desc="Esta camisa marrón de estilo vaquero destaca por sus elaborados bordados en blanco. Su diseño 
+      único le da un aire bohemio y con mucho carácter."
+      data-images='["fotos/camisa-marron1.png","fotos/camisa-marron2.png","fotos/camisa-marron3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/camisa-marron1.png" alt="Camisa Granada" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Camisa Granada</h3>
+        <p class="price">$ 38.990</p>
+      </button>
+    </article>
+
+      <article class="card"
+      data-name="Camisa Copenhague"
+      data-price="33990"
+      data-desc="Una camisa de rayas rojas y blancas con un corte clásico. Es una prenda audaz y moderna 
+      que añade un toque de energía y dinamismo a cualquier atuendo."
+      data-images='["fotos/camisa-roja1.png","fotos/camisa-roja2.png","fotos/camisa-roja3.png"]'>
+      <button class="card-link">
+        <div class="thumb">
+          <img src="fotos/camisa-roja1.png" alt="Camisa Copenhague" loading="lazy" width="600" height="900">
+        </div>
+        <h3 class="name">Camisa Copenhague</h3>
+        <p class="price">$ 33.990</p>
+      </button>
+    </article>
+  </section>
+
+  <!-- MODAL REUTILIZABLE (arranca cerrado) -->
+  <section class="modal" id="modal" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
+
+      <header class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <div class="modal-price" id="modalPrice"></div>
+        </div>
+      </header>
+
+      <!-- Carrusel que se adapta a la imagen -->
+      <div class="carousel">
+        <button class="nav prev" id="prevBtn" aria-label="Anterior">◀</button>
+        <div class="slides" id="slides"></div>
+        <button class="nav next" id="nextBtn" aria-label="Siguiente">▶</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+      <p class="description" id="modalDesc"></p>
+    </div>
+
+    <!-- clic en fondo → cerrar -->
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  </section>
+</main>
+<footer>
+    <ul>
+        <li>Local 22 - Segundo Piso</li>
+        <li id="contacto"> Contacto!</li>
+        <li><a href="mailto:zzephir.clothing@gmail.com">zzephir.clothing@gmail.com</a></li>
+        <li><a href="https://wa.me/541144928428" target="_blank">+54 11 4492-828</a></li>
+    </ul>
+    <section class="ig">
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">
+            <img src="imagenes/logoig.png" alt="logo de instagram">
+        </a>
+        <a href="https://www.instagram.com/zephir.clothing" target="_blank">@zephir.clothing</a>
+    </section>
+</footer>
+</body>
+</html>
